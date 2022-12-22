@@ -1,5 +1,6 @@
-@import '~bootstrap/scss/bootstrap';
+@use './partials/mixin' as *;
 @use './partials/variables' as *;
+@import '~bootstrap/scss/bootstrap';
 
 * {
     padding: 0;
@@ -35,4 +36,36 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
+}
+
+
+header {
+    @include centerFlex('vertical');
+    justify-content: space-between;
+    height: 200px;
+    width: 80%;
+    margin: 0 auto;
+
+    ul {
+        @include navListNoStyle('horizontal');
+        height: 100%;
+
+        li {
+            @include centerFlex();
+            max-height: 100%;
+            border-bottom: 5px solid rgba(0, 0, 0, 0);
+
+            &:hover,
+            &.active {
+                border-bottom: 5px solid $primary-color;
+            }
+
+        }
+
+        a {
+            color: #5b5f5e;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
 }
