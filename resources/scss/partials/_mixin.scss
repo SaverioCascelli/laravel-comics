@@ -1,0 +1,40 @@
+@mixin navListNoStyle($type: 'vertical') {
+    display: flex;
+    list-style: none;
+
+    a {
+        text-decoration: none;
+    }
+
+    @if $type =='vertical' {
+        flex-direction: column;
+
+
+    }
+
+    @else if $type =='horizontal' {
+        flex-direction: row;
+
+        li {
+            margin: 0px 10px 0px 10px;
+        }
+    }
+}
+
+@mixin centerFlex($type: 'both') {
+    display: flex;
+
+    @if $type =='vertical' {
+        align-items: center;
+    }
+
+    @else if $type =='horizontal' {
+        justify-content: center;
+    }
+
+    @else if $type =='both' {
+        align-items: center;
+        justify-content: center;
+    }
+
+}
