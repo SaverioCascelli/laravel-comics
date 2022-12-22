@@ -2,6 +2,6 @@
 
 @section('content')
     <main>
-        characters9
+        movies
     </main>
 @endsection
